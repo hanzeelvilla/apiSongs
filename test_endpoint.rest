@@ -1,0 +1,59 @@
+
+#Entry point
+GET http://localhost:3000/
+
+###
+
+#List songs
+GET http://localhost:3000/api/songs
+
+###
+
+#Find song
+GET http://localhost:3000/api/songs/1
+
+###
+
+#Create song WITH album cover
+POST http://localhost:3000/api/songs
+Content-Type: application/json
+
+{
+    "title": "You could be mine",
+    "artist": "Guns N roses",
+    "genre": "Hard rock",
+    "duration": 5,
+    "albumImg": "https://upload.wikimedia.org/wikipedia/en/thumb/3/38/GunsnRosesUseYourIllusionII.jpg/220px-GunsnRosesUseYourIllusionII.jpg"
+}
+
+###
+
+#Create song WITHOUT cover
+POST http://localhost:3000/api/songs
+Content-Type: application/json
+
+{
+    "title": "Karma Police",
+    "artist": "Radiohead",
+    "genre": "Alternative rock",
+    "duration": 5
+}
+
+###
+
+#Update song
+PUT http://localhost:3000/api/songs/1
+Content-Type: application/json
+
+{
+    "title": "The Adults Are Talking",
+    "artist": "The strokes",
+    "genre": "indie rock",
+    "duration": 5,
+    "albumImg": null
+}
+
+###
+
+#Delete song
+DELETE http://localhost:3000/api/songs/1
